@@ -18,7 +18,7 @@ export default class extends React.Component {
         }
     }
 
-    searchByTerm = async() => {
+    searchByTerm = async () => {
         const {searchTerm} = this.state;
         this.setState({ loading: true })
         try {
