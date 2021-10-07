@@ -1,12 +1,12 @@
-import { movieApi, tvApi } from "api";
 import React from "react"
 import DetailPresenter from "./DetailPresenter"
+import { movieApi, tvApi } from "api";
 
 export default class extends React.Component {
     constructor(props) {
         super(props)
         const {
-            location: {pathname}
+            location: { pathname }
         } = props;
         this.state = {
             result: null,
@@ -18,10 +18,10 @@ export default class extends React.Component {
 
     async componentDidMount() {
         const {
-            match: 
-                {params: {id}
+            match: {
+                params: { id }
             },
-            history: {push}
+            history: { push }
         } = this.props;
         const { isMovie } = this.state;
         const parsedId = parseInt(id)
@@ -49,13 +49,6 @@ export default class extends React.Component {
 
     render() {
         const { result, error, loading} = this.state;
-        console.log(result)
-        return (
-            <DetailPresenter 
-            result={result}
-            error={error}
-            loading={loading} 
-            />
-        )
+        return <DetailPresenter result={result} error={error} loading={loading} />
     }
 }
